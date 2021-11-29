@@ -14,6 +14,12 @@ export class StoreService {
   public readonly arrayPokemonsPublica: Observable<Pokemon[]> =
     this.arrayPokemonsPrivada.asObservable();
 
+  //oleole ini
+  pokemonsArrayOle$ = new BehaviorSubject<
+    { id: string; name: string; url: string }[]
+  >([]);
+  //oleole fini
+
   constructor(private pokemonSvc: ServiceService) {}
 
   getpokemonsStore1() {
@@ -30,6 +36,13 @@ export class StoreService {
       complete: () => console.info('complete'),
     });
   }
+
+  //oleole ini
+  //ojo xavales que aqui lo que va entre <> debería ser una interface, esto es una guarrada xD it works tho
+  getpokemonsStore3(): Observable<{ id: string; name: string; url: string }[]> {
+    return this.pokemonSvc.getpokemon2();
+  }
+  //oleole fini
 
   addPokemon(pokemon: {}) {
     this.pokemonSvc.postPokemon(pokemon).subscribe({

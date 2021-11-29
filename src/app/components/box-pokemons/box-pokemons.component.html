@@ -8,3 +8,13 @@
 </ul>
 
 <p>Valor de pokemons$: {{ pokemons$ | async | json }}</p>
+
+<!--oleole ini-->
+<h2>ole printing pokis</h2>
+<ul>
+  <li *ngFor="let poki of pokis">
+    <h1>{{ poki.name }}</h1>
+    <h2>{{ poki.url }}</h2>
+  </li>
+</ul>
+<!--oleole fin-->
