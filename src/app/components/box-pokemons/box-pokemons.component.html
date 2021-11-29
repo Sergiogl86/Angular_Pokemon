@@ -1,0 +1,10 @@
+<h2>Aqui tienes que printar pokemons</h2>
+
+<ul>
+  <li *ngFor="let pokemon of pokemons$ | async">
+    <h1>{{ pokemon.name }}</h1>
+    <h2>{{ pokemon.url }}</h2>
+  </li>
+</ul>
+
+<p>Valor de pokemons$: {{ pokemons$ | async | json }}</p>
