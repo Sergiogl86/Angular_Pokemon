@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   apiURL1: 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=20',
-  apiURL2: 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=90',
+  apiURL2: 'https://oleguer-pokemon.herokuapp.com/pokemon/',
+  apiURL3: 'https://oleguer-pokemon.herokuapp.com/pokemon/',
 };
 
 /*

@@ -15,4 +15,8 @@ export class ServiceService {
   getpokemon2(): Observable<any> {
     return this.http.get(environment.apiURL2);
   }
+
+  postPokemon(pokemon: {}): Observable<any> {
+    return this.http.post(environment.apiURL3, pokemon);
+  }
 }

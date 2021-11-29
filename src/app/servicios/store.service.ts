@@ -25,7 +25,20 @@ export class StoreService {
   }
   getpokemonsStore2() {
     this.pokemonSvc.getpokemon2().subscribe({
-      next: (res) => this.arrayPokemonsPrivada.next(res.results),
+      next: (res) => this.arrayPokemonsPrivada.next(res),
+      error: (e) => console.error('Error ->', e),
+      complete: () => console.info('complete'),
+    });
+  }
+
+  addPokemon(pokemon: {}) {
+    this.pokemonSvc.postPokemon(pokemon).subscribe({
+      // next: (res) =>
+      //   this.arrayPokemonsPrivada.next([
+      //     ...this.arrayPokemonsPrivada.getValue(),
+      //     res,
+      //   ]),
+      next: () => this.getpokemonsStore2(),
       error: (e) => console.error('Error ->', e),
       complete: () => console.info('complete'),
     });

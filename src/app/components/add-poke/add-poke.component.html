@@ -1,0 +1,22 @@
+<p>add-poke works!</p>
+
+<form [formGroup]="pokeForm" (ngSubmit)="onSubmit()">
+  <label for="name">First Name: </label>
+  <input id="name" type="text" formControlName="name" name="name" required />
+  <div *ngIf="f.name.touched && f.name.invalid">
+    <small class="text-danger" *ngIf="f.name.errors?.required">
+      Name is required!
+    </small>
+  </div>
+
+  <label for="url">URL: </label>
+  <input id="url" type="text" formControlName="url" />
+  <div *ngIf="f.url.touched && f.url.invalid">
+    <small class="text-danger" *ngIf="f.url.errors?.required">
+      url is required!
+    </small>
+  </div>
+
+  <button type="submit" [disabled]="!pokeForm.valid">fsffs</button>
+</form>
+<p>{{ pokeForm }}</p>
